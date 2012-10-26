@@ -7,6 +7,12 @@ int main(void){
   int n1=1000,n2=1050,n3=1100,i;
   printf("Lab 5. Variant 3\n\n");
   for (i=1; i <= n3 ; i++) {
+	f=exp(sqrt(3*i/2));
+	fcor=f-cor;
+	scor=s+fcor;
+	cor=(scor-s)-fcor;
+	s=scor;
+	s2=s2+f;
 	if ((i==n1) || (i==n2) || (i==n3)) {
 	  printf("Number:       %d\n",i);
 	  printf("No correction:%.30e\n",s2);
@@ -21,12 +27,6 @@ int main(void){
 	  }
 	  printf("Difference:   %.30e\n\n",fabs(s2-s));
 	}
-	f=exp(sqrt(3*i/2));
-	fcor=f-cor;
-	scor=s+fcor;
-	cor=(scor-s)-fcor;
-	s=scor;
-	s2=s2+f;
   }
   printf("Dimini Inc.\n");
   printf("For progressive future\n");
